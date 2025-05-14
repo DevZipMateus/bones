@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -69,7 +70,15 @@ export default {
 					gray: '#f8f9fa', // Light background
 					darkGray: '#343a40', // Dark text
 					accent: '#a67c00', // Darker gold for accents (10%)
+				},
+				gold: {
+					light: '#d4af37',
+					DEFAULT: '#d4af37',
+					dark: '#a67c00',
 				}
+			},
+			fontFamily: {
+				sans: ['Open Sans', 'sans-serif'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Phone, Mail, MapPin } from 'lucide-react';
 import { useIsMobile } from '../hooks/use-mobile';
@@ -36,12 +37,12 @@ const Contact = () => {
               <h3 className="text-lg font-semibold text-neutral-900 mb-2">WhatsApp</h3>
               <p className="text-neutral-600 mb-4">Atendimento rápido e prático</p>
               <a 
-                href="https://wa.me/5511987654321" 
+                href="https://wa.me/5595984163641" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="bg-black hover:bg-neutral-800 text-amber-400 px-6 py-2 rounded-md inline-flex items-center justify-center gap-2 transition-all font-medium"
               >
-                <span>Enviar mensagem</span>
+                <span>(95) 98416-3641</span>
               </a>
             </div>
           </div>
@@ -49,16 +50,16 @@ const Contact = () => {
           {/* Phone Card */}
           <div className="bg-white rounded-xl shadow-sm overflow-hidden animate-fade-in" style={{ animationDelay: '0.1s' }}>
             <div className="bg-amber-400 p-6 flex items-center justify-center">
-              <Phone className="w-16 h-16 text-white" />
+              <Phone className="w-16 h-16 text-black" />
             </div>
             <div className="p-6 text-center">
               <h3 className="text-lg font-semibold text-neutral-900 mb-2">Telefone</h3>
               <p className="text-neutral-600 mb-4">Fale diretamente conosco</p>
               <a 
-                href="tel:+5511987654321"
+                href="tel:+5595984163641"
                 className="bg-black hover:bg-neutral-800 text-amber-400 px-6 py-2 rounded-md inline-flex items-center justify-center gap-2 transition-all font-medium"
               >
-                <span>(11) 98765-4321</span>
+                <span>(95) 98416-3641</span>
               </a>
             </div>
           </div>
@@ -72,10 +73,10 @@ const Contact = () => {
               <h3 className="text-lg font-semibold text-neutral-900 mb-2">E-mail</h3>
               <p className="text-neutral-600 mb-4">Envie sua mensagem</p>
               <a 
-                href="mailto:contato@contabilidade.com"
+                href="mailto:antoniobernardo1211@gmail.com"
                 className="bg-black hover:bg-neutral-800 text-amber-400 px-6 py-2 rounded-md inline-flex items-center justify-center gap-2 transition-all font-medium"
               >
-                <span>contato@contabilidade.com</span>
+                <span>antoniobernardo1211@gmail.com</span>
               </a>
             </div>
           </div>
@@ -91,7 +92,7 @@ const Contact = () => {
               </div>
               <div>
                 <h4 className="text-lg font-semibold text-neutral-900 mb-2">Endereço</h4>
-                <p className="text-neutral-600">Av. Paulista, 1000 - Bela Vista, São Paulo - SP, 01310-100</p>
+                <p className="text-neutral-600">Rua Carlos Mesquita Ferreira, número 72, bairro Jóquei Clube, Boa Vista - RR</p>
               </div>
             </div>
             
