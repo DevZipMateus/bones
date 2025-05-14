@@ -1,34 +1,34 @@
 
 import React from 'react';
-import { FileSpreadsheet, FileCheck, Building2, FileText, ArrowRight } from 'lucide-react';
+import { Package, Tag, CircleCheck, Truck, ArrowRight } from 'lucide-react';
 
 const services = [
   {
     id: 1,
-    title: 'Contabilidade',
-    description: 'Serviços especializados para atender às necessidades legais das empresas, com foco em resultados e eficiência.',
-    icon: FileSpreadsheet,
+    title: 'Bonés Country',
+    description: 'Bonés country originais de alta qualidade, com design exclusivo e confortáveis para o dia a dia.',
+    icon: Package,
     delay: '0s'
   },
   {
     id: 2,
-    title: 'Fiscal',
-    description: 'Assessoria completa para cumprimento de todas as obrigações fiscais, evitando problemas com o fisco.',
-    icon: FileCheck,
+    title: 'Bonés Dad Hat',
+    description: 'Estilo moderno e casual, perfeito para qualquer ocasião. Conforto e qualidade garantidos.',
+    icon: Tag,
     delay: '0.1s'
   },
   {
     id: 3,
-    title: 'Abertura de Empresa',
-    description: 'Orientação na estruturação societária adequada, visando economia tributária desde o primeiro dia.',
-    icon: Building2,
+    title: 'Venda no Atacado',
+    description: 'Preços especiais para revendedores. Aproveite nossos descontos para compras em grande quantidade.',
+    icon: Truck,
     delay: '0.2s'
   },
   {
     id: 4,
-    title: 'Societário',
-    description: 'Serviços relacionados às questões legais junto a órgãos públicos e privados, mantendo sua empresa em dia.',
-    icon: FileText,
+    title: 'Produtos Originais',
+    description: 'Garantimos a autenticidade e qualidade de todos os nossos bonés, trabalhamos apenas com produtos originais.',
+    icon: CircleCheck,
     delay: '0.3s'
   }
 ];
@@ -40,14 +40,13 @@ const Services = () => {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-block bg-corporate-blue/10 text-corporate-blue font-medium px-4 py-1.5 rounded-full text-sm mb-4">
-            Nossos Serviços
+            Nossos Produtos
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            Soluções completas para sua empresa
+            Estilo e qualidade para você
           </h2>
           <p className="text-gray-600 text-lg">
-            Oferecemos serviços especializados para atender às necessidades específicas do seu negócio, 
-            desde a abertura até a gestão contínua.
+            Oferecemos uma variedade de bonés country e dad hat, com os melhores preços no atacado e varejo.
           </p>
         </div>
         
@@ -71,10 +70,12 @@ const Services = () => {
         {/* CTA */}
         <div className="mt-16 text-center">
           <a 
-            href="#contact" 
+            href="https://wa.me/5595984163641" 
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-black hover:bg-neutral-800 text-amber-400 px-6 py-3 rounded-md transition-all flex items-center justify-center gap-2 font-medium inline-flex"
           >
-            <span>Fale com um especialista</span>
+            <span>Fale com um vendedor</span>
             <ArrowRight size={18} />
           </a>
         </div>
