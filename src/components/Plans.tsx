@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Check, X } from 'lucide-react';
+import { Check, X, CircleDollarSign, Ticket } from 'lucide-react';
 import { useIsMobile } from '../hooks/use-mobile';
 import { cn } from '../lib/utils';
 
@@ -42,7 +42,8 @@ const plans = [
     ],
     popular: false,
     delay: '0s',
-    color: 'bg-neutral-50'
+    color: 'bg-neutral-50',
+    buttonText: 'Comprar Boné Country'
   },
   {
     id: 2,
@@ -81,7 +82,8 @@ const plans = [
     ],
     popular: true,
     delay: '0.1s',
-    color: 'bg-amber-50'
+    color: 'bg-amber-50',
+    buttonText: 'Comprar Dad Hat'
   },
   {
     id: 3,
@@ -120,7 +122,8 @@ const plans = [
     ],
     popular: false,
     delay: '0.2s',
-    color: 'bg-neutral-50'
+    color: 'bg-neutral-50',
+    buttonText: 'Solicitar Atacado'
   }
 ];
 
@@ -128,8 +131,12 @@ const Plans = () => {
   const isMobile = useIsMobile();
   
   return (
-    <section id="plans" className="section bg-white">
-      <div className="container-custom">
+    <section id="plans" className="section bg-white py-20 relative overflow-hidden">
+      {/* Background decorations */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-amber-400/5 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-amber-400/5 rounded-full blur-3xl"></div>
+      
+      <div className="container-custom relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
           <div className="inline-block bg-amber-100 text-amber-600 font-medium px-4 py-1.5 rounded-full text-sm mb-4">
@@ -140,6 +147,7 @@ const Plans = () => {
           </h2>
           <p className="text-neutral-600 text-lg">
             Oferecemos preços especiais tanto para clientes individuais quanto para revendedores.
+            Confira nossas opções e escolha a melhor para você!
           </p>
         </div>
         
@@ -163,6 +171,15 @@ const Plans = () => {
                   </div>
                 )}
                 
+                {/* Icon */}
+                <div className={`w-10 h-10 rounded-full flex items-center justify-center mb-4 ${plan.popular ? 'bg-amber-100' : 'bg-neutral-100'}`}>
+                  {plan.id === 3 ? (
+                    <Ticket className={`${plan.popular ? 'text-amber-600' : 'text-neutral-600'}`} size={20} />
+                  ) : (
+                    <CircleDollarSign className={`${plan.popular ? 'text-amber-600' : 'text-neutral-600'}`} size={20} />
+                  )}
+                </div>
+                
                 {/* Plan Name and Price */}
                 <h3 className="text-2xl font-bold text-neutral-900 mb-2">{plan.name}</h3>
                 <div className="flex items-end mb-4">
@@ -177,13 +194,13 @@ const Plans = () => {
                 
                 {/* CTA Button */}
                 <a 
-                  href="https://wa.me/5595984163641" 
+                  href={`https://wa.me/5595984163641?text=Olá! Estou interessado em ${plan.name}`} 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="block text-center py-3 px-6 rounded-lg transition-colors duration-300 w-full bg-black hover:bg-neutral-900 text-amber-400"
                 >
                   <div className="flex items-center justify-center gap-2">
-                    <span>Comprar Agora</span>
+                    <span>{plan.buttonText}</span>
                   </div>
                 </a>
               </div>
@@ -217,13 +234,13 @@ const Plans = () => {
         {/* Custom Plans */}
         <div className="mt-12 text-center">
           <p className="text-neutral-600 mb-4">
-            Necessita de um pedido personalizado?
+            Necessita de um pedido personalizado ou atacado especial?
           </p>
           <a 
-            href="https://wa.me/5595984163641" 
+            href="https://wa.me/5595984163641?text=Olá! Gostaria de um orçamento personalizado para bonés" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="inline-flex items-center justify-center px-6 py-3 bg-black hover:bg-neutral-900 text-amber-400 rounded-md transition-all duration-300 gap-2"
+            className="inline-flex items-center justify-center px-6 py-3 bg-black hover:bg-neutral-900 text-amber-400 rounded-md transition-all duration-300 gap-2 font-bold"
           >
             <span>Solicitar proposta personalizada</span>
           </a>

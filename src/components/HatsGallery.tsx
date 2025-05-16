@@ -3,34 +3,34 @@ import React, { useState } from 'react';
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 
-// Placeholder hat images - in a real scenario, these would be replaced with actual hat images
+// Real hat images from lovable-uploads
 const hatImages = [
-  { id: 1, src: "https://images.unsplash.com/photo-1521369909029-2afed882baee?q=80&w=500", alt: "Boné Country Preto" },
-  { id: 2, src: "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?q=80&w=500", alt: "Boné Dad Hat Azul" },
-  { id: 3, src: "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?q=80&w=500", alt: "Boné Country Marrom" },
-  { id: 4, src: "https://images.unsplash.com/photo-1575428652377-a2d80e2277fc?q=80&w=500", alt: "Boné Dad Hat Vermelho" },
-  { id: 5, src: "https://images.unsplash.com/photo-1534215754734-18e55d13e346?q=80&w=500", alt: "Boné Country Verde" },
-  { id: 6, src: "https://images.unsplash.com/photo-1556306535-0f09a537f0a3?q=80&w=500", alt: "Boné Dad Hat Preto" },
-  { id: 7, src: "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?q=80&w=500", alt: "Boné Country Azul" },
-  { id: 8, src: "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?q=80&w=500", alt: "Boné Dad Hat Marrom" },
-  { id: 9, src: "https://images.unsplash.com/photo-1575428652377-a2d80e2277fc?q=80&w=500", alt: "Boné Country Vermelho" },
-  { id: 10, src: "https://images.unsplash.com/photo-1534215754734-18e55d13e346?q=80&w=500", alt: "Boné Dad Hat Verde" },
-  { id: 11, src: "https://images.unsplash.com/photo-1556306535-0f09a537f0a3?q=80&w=500", alt: "Boné Country Preto" },
-  { id: 12, src: "https://images.unsplash.com/photo-1521369909029-2afed882baee?q=80&w=500", alt: "Boné Dad Hat Azul" },
-  { id: 13, src: "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?q=80&w=500", alt: "Boné Country Marrom" },
-  { id: 14, src: "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?q=80&w=500", alt: "Boné Dad Hat Vermelho" },
-  { id: 15, src: "https://images.unsplash.com/photo-1575428652377-a2d80e2277fc?q=80&w=500", alt: "Boné Country Verde" },
-  { id: 16, src: "https://images.unsplash.com/photo-1534215754734-18e55d13e346?q=80&w=500", alt: "Boné Dad Hat Preto" },
-  { id: 17, src: "https://images.unsplash.com/photo-1556306535-0f09a537f0a3?q=80&w=500", alt: "Boné Country Azul" },
-  { id: 18, src: "https://images.unsplash.com/photo-1521369909029-2afed882baee?q=80&w=500", alt: "Boné Dad Hat Marrom" },
-  { id: 19, src: "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?q=80&w=500", alt: "Boné Country Vermelho" },
-  { id: 20, src: "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?q=80&w=500", alt: "Boné Dad Hat Verde" },
-  { id: 21, src: "https://images.unsplash.com/photo-1575428652377-a2d80e2277fc?q=80&w=500", alt: "Boné Country Preto" },
-  { id: 22, src: "https://images.unsplash.com/photo-1534215754734-18e55d13e346?q=80&w=500", alt: "Boné Dad Hat Azul" },
-  { id: 23, src: "https://images.unsplash.com/photo-1556306535-0f09a537f0a3?q=80&w=500", alt: "Boné Country Marrom" },
-  { id: 24, src: "https://images.unsplash.com/photo-1521369909029-2afed882baee?q=80&w=500", alt: "Boné Dad Hat Vermelho" },
-  { id: 25, src: "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?q=80&w=500", alt: "Boné Country Verde" },
-  { id: 26, src: "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?q=80&w=500", alt: "Boné Dad Hat Preto" },
+  { id: 1, src: "/lovable-uploads/672976642029408.jpeg", alt: "Boné Country" },
+  { id: 2, src: "/lovable-uploads/1862300144561758.jpeg", alt: "Boné Dad Hat" },
+  { id: 3, src: "/lovable-uploads/1934583266947780.jpeg", alt: "Boné Country Premium" },
+  { id: 4, src: "/lovable-uploads/1052511813464571.jpeg", alt: "Boné Dad Hat Classic" },
+  { id: 5, src: "/lovable-uploads/686070720685166.jpeg", alt: "Boné Country Special" },
+  { id: 6, src: "/lovable-uploads/1699956213965913.jpeg", alt: "Boné Dad Hat Premium" },
+  { id: 7, src: "/lovable-uploads/9297529937014291.jpeg", alt: "Boné Country Elite" },
+  { id: 8, src: "/lovable-uploads/577118098737398.jpeg", alt: "Boné Dad Hat Comfort" },
+  { id: 9, src: "/lovable-uploads/1039105094828012.jpeg", alt: "Boné Country Original" },
+  { id: 10, src: "/lovable-uploads/556642347505090.jpeg", alt: "Boné Dad Hat Style" },
+  { id: 11, src: "/lovable-uploads/1258760839010603.jpeg", alt: "Boné Country Deluxe" },
+  { id: 12, src: "/lovable-uploads/669155292489236.jpeg", alt: "Boné Dad Hat Fashion" },
+  { id: 13, src: "/lovable-uploads/1407743103980170.jpeg", alt: "Boné Country Pro" },
+  { id: 14, src: "/lovable-uploads/1835669633960201.jpeg", alt: "Boné Dad Hat Urban" },
+  { id: 15, src: "/lovable-uploads/1029064288753165.jpeg", alt: "Boné Country Fashion" },
+  { id: 16, src: "/lovable-uploads/716127317651917.jpeg", alt: "Boné Dad Hat Modern" },
+  { id: 17, src: "/lovable-uploads/3969620896623138.jpeg", alt: "Boné Country Western" },
+  { id: 18, src: "/lovable-uploads/1610726109525762.jpeg", alt: "Boné Dad Hat Casual" },
+  { id: 19, src: "/lovable-uploads/1610407272952132.jpeg", alt: "Boné Country Classic" },
+  { id: 20, src: "/lovable-uploads/1772038437084133.jpeg", alt: "Boné Dad Hat Retro" },
+  { id: 21, src: "/lovable-uploads/711342364911349.jpeg", alt: "Boné Country Comfort" },
+  { id: 22, src: "/lovable-uploads/704694838635814.jpeg", alt: "Boné Dad Hat Elite" },
+  { id: 23, src: "/lovable-uploads/9709495302467333.jpeg", alt: "Boné Country Limited" },
+  { id: 24, src: "/lovable-uploads/2923082561205415.jpeg", alt: "Boné Dad Hat Special" },
+  { id: 25, src: "/lovable-uploads/960862149306944.jpeg", alt: "Boné Country Style" },
+  { id: 26, src: "/lovable-uploads/1030518952368091.jpeg", alt: "Boné Dad Hat Signature" }
 ];
 
 const ITEMS_PER_PAGE = 8;
@@ -55,11 +55,15 @@ const HatsGallery = () => {
   );
 
   return (
-    <section id="gallery" className="section bg-neutral-50 py-16">
-      <div className="container-custom">
+    <section id="gallery" className="section bg-neutral-50 py-16 relative">
+      {/* Background decorations */}
+      <div className="absolute top-20 right-10 w-72 h-72 bg-amber-400/5 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-20 left-10 w-72 h-72 bg-amber-400/5 rounded-full blur-3xl"></div>
+      
+      <div className="container-custom relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-block bg-corporate-blue/10 text-corporate-blue font-medium px-4 py-1.5 rounded-full text-sm mb-4">
+          <div className="inline-block bg-amber-100 text-amber-600 font-medium px-4 py-1.5 rounded-full text-sm mb-4">
             Nossa Coleção
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
@@ -67,6 +71,7 @@ const HatsGallery = () => {
           </h2>
           <p className="text-gray-600 text-lg">
             Conheça nossa variedade de bonés originais, com qualidade, conforto e estilo.
+            Clique nas imagens para ver mais detalhes.
           </p>
         </div>
         
@@ -101,7 +106,7 @@ const HatsGallery = () => {
           <div className="flex justify-center mt-12 space-x-4">
             <button 
               onClick={handlePrevPage}
-              className="p-2 rounded-full bg-gray-100 hover:bg-corporate-blue/10 text-gray-600 hover:text-corporate-blue transition-colors duration-300"
+              className="p-2 rounded-full bg-gray-100 hover:bg-amber-100 text-gray-600 hover:text-amber-600 transition-colors duration-300"
               aria-label="Página anterior"
             >
               <ArrowLeft size={20} />
@@ -114,7 +119,7 @@ const HatsGallery = () => {
                   key={index}
                   onClick={() => setCurrentPage(index)}
                   className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
-                    currentPage === index ? 'bg-corporate-blue w-6' : 'bg-gray-300'
+                    currentPage === index ? 'bg-amber-500 w-6' : 'bg-gray-300'
                   }`}
                   aria-label={`Ir para página ${index + 1}`}
                 />
@@ -123,7 +128,7 @@ const HatsGallery = () => {
             
             <button 
               onClick={handleNextPage}
-              className="p-2 rounded-full bg-gray-100 hover:bg-corporate-blue/10 text-gray-600 hover:text-corporate-blue transition-colors duration-300"
+              className="p-2 rounded-full bg-gray-100 hover:bg-amber-100 text-gray-600 hover:text-amber-600 transition-colors duration-300"
               aria-label="Próxima página"
             >
               <ArrowRight size={20} />
@@ -164,7 +169,7 @@ const HatsGallery = () => {
                     rel="noopener noreferrer"
                     className="bg-black text-amber-400 px-6 py-2 rounded-md hover:bg-neutral-800 transition-colors"
                   >
-                    Comprar agora
+                    Comprar este boné
                   </a>
                 </div>
               </div>
@@ -175,7 +180,7 @@ const HatsGallery = () => {
         {/* CTA */}
         <div className="mt-12 text-center">
           <a 
-            href="https://wa.me/5595984163641" 
+            href="https://wa.me/5595984163641?text=Olá! Gostaria de ver todos os modelos disponíveis" 
             target="_blank"
             rel="noopener noreferrer"
             className="bg-black hover:bg-neutral-800 text-amber-400 px-8 py-4 rounded-md transition-all inline-flex items-center gap-2 font-bold text-lg"
